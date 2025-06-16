@@ -63,8 +63,12 @@ tm_player_transfer_history <- function(player_urls, get_extra_info = TRUE) {
           "url" = .x[["url"]],
           "season" = .x[["season"]],
           "transfer_date" = lubridate::ymd(.x[["dateUnformatted"]]),
+          "team_from_emblem"= .x[["from"]][["clubEmblemMobile"]],
+          "team_from_country"= .x[["from"]][["countryFlag"]],
           "team_from" = .x[["from"]][["clubName"]],
           "team_to" = .x[["to"]][["clubName"]],
+          "team_to_emblem"= .x[["to"]][["clubEmblemMobile"]],
+          "team_to_country"= .x[["to"]][["countryFlag"]],
           "market_value" = .convert_value_to_numeric(.x[["marketValue"]]),
           "transfer_value" = .convert_value_to_numeric(.x[["fee"]]),
           "transfer_type" = .standardize_fee(.x[["fee"]])
@@ -165,10 +169,14 @@ tm_player_transfer_history <- function(player_urls, get_extra_info = TRUE) {
             c(
               "season",
               "transfer_date",
+              "team_from_emblem"
+              "team_from_country",
               "country_from",
               "team_from",
               "country_to",
               "team_to",
+              "team_to_emblem",
+              "team_to_country",
               "market_value",
               "transfer_value",
               "transfer_type",
