@@ -169,7 +169,7 @@ tm_player_transfer_history <- function(player_urls, get_extra_info = TRUE) {
             c(
               "season",
               "transfer_date",
-              "team_from_emblem"
+              "team_from_emblem",
               "team_from_country",
               "country_from",
               "team_from",
